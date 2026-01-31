@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS AI</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LifeOS AI</h1>
+            <p class="subtitle">Smart academic and personal life management for students</p>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2 class="section-title">Add New Task</h2>
+                
+                <div class="input-group">
+                    <label for="taskName">Task Name</label>
+                    <input type="text" id="taskName" placeholder="e.g., Complete Math Assignment">
+                </div>
+
+                <div class="input-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="Academic">Academic</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="deadline">Deadline Date</label>
+                    <input type="date" id="deadline">
+                </div>
+
+                <div class="input-group">
+                    <label for="priority">Priority Level</label>
+                    <select id="priority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <button id="addTaskBtn" class="btn-primary">Add Task</button>
+                <button onclick="clearTasks()">Clear All Tasks</button>
+
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">My Tasks <span id="taskCount">(0)</span></h2>
+                <div id="taskList" class="task-list">
+                    <p class="empty-message">No tasks added yet. Add your first task above!</p>
+                </div>
+            </section>
+
+            <button id="planBtn" class="btn-analyze">What Should I Do Today?</button>
+
+            <div id="result" class="result hidden">
+                <h2 id="resultTitle"></h2>
+                <p id="explanation"></p>
+                <div id="todayTasks"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
